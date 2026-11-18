@@ -241,6 +241,208 @@
 .socials a { color: #475569; display: inline-flex; transition: color 0.2s, transform 0.2s; }
 .socials a:hover { color: #2563eb; transform: translateY(-2px); }
 
+/* Centered Section Header */
+.section-head-center {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 38px;
+}
+.section-head-center h2 {
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 10px;
+}
+.section-head-center p {
+  color: #64748b;
+  font-size: 0.98rem;
+}
+
+/* Filter Buttons */
+.project-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 36px;
+}
+.filter-pill {
+  padding: 8px 18px;
+  border-radius: 20px;
+  border: 1px solid #e2e8f0;
+  background: #f1f5f9;
+  color: #334155;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.filter-pill.active,
+.filter-pill:hover {
+  background: #2563eb;
+  color: #ffffff;
+  border-color: #2563eb;
+}
+
+/* 3-Column Project Grid */
+.solutions-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+  align-items: start;
+}
+
+/* Individual Project Card */
+.solution-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Top Banner Preview */
+.solution-banner {
+  background: linear-gradient(135deg, #1e3a8a, #2563eb);
+  color: #ffffff;
+  padding: 26px 20px;
+  text-align: center;
+}
+.solution-banner strong {
+  display: block;
+  font-size: 1rem;
+  letter-spacing: 0.4px;
+  margin-bottom: 4px;
+}
+.solution-banner span {
+  font-size: 0.8rem;
+  opacity: 0.9;
+}
+
+/* Card Content */
+.solution-body {
+  padding: 24px 26px 26px;
+  display: flex;
+  flex-direction: column;
+}
+.solution-title {
+  font-size: 1.22rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 10px;
+}
+
+/* Colored Tech Badges */
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 18px;
+}
+.t-badge {
+  font-size: 0.74rem;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 4px;
+  color: #ffffff;
+}
+.t-blue { background: #2563eb; }
+.t-sky { background: #0284c7; }
+.t-amber { background: #d97706; }
+.t-teal { background: #0d9488; }
+.t-slate { background: #475569; }
+
+/* Subsections inside Card */
+.sol-section {
+  margin-bottom: 14px;
+}
+.sol-section h4 {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 4px;
+}
+.sol-section p,
+.sol-section ul {
+  font-size: 0.87rem;
+  color: #475569;
+  line-height: 1.55;
+}
+.sol-section ul {
+  padding-left: 18px;
+}
+.sol-section li {
+  margin-bottom: 3px;
+}
+
+/* Expandable More Details */
+.details-accordion {
+  width: 100%;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin: 8px 0 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: #334155;
+  cursor: pointer;
+}
+.accordion-panel {
+  display: none;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  padding: 14px;
+  margin: -16px 0 16px;
+  font-size: 0.85rem;
+  color: #475569;
+}
+.accordion-panel.open {
+  display: block;
+}
+.accordion-panel h5 {
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 8px 0 4px;
+}
+.accordion-panel h5:first-child {
+  margin-top: 0;
+}
+.accordion-panel ul {
+  padding-left: 18px;
+}
+
+/* GitHub Button */
+.btn-github {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 0.86rem;
+  font-weight: 600;
+  padding: 9px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  align-self: flex-start;
+}
+.btn-github:hover {
+  background: #1d4ed8;
+}
+
+/* Responsive Columns */
+@media (max-width: 960px) {
+  .solutions-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
   </style>
 </head>
@@ -693,6 +895,23 @@
     document.getElementById('certFrame').src = '';
   }
 </script>
+<script>
+  function filterProjects(category, btn) {
+    document.querySelectorAll('.filter-pill').forEach(pill => pill.classList.remove('active'));
+    btn.classList.add('active');
+
+    document.querySelectorAll('.solution-card').forEach(card => {
+      const tags = card.getAttribute('data-tags');
+      card.style.display = (category === 'all' || tags.includes(category)) ? 'flex' : 'none';
+    });
+  }
+
+  function toggleMoreDetails(button) {
+    const panel = button.nextElementSibling;
+    panel.classList.toggle('open');
+  }
+</script>
+
 
  <!-- Education Section -->
 <section id="education">
@@ -738,6 +957,226 @@
     </div>
   </div>
 </section>
+
+<!-- projects Section -->
+<section id="projects">
+  <div class="section-head-center">
+    <h2>Featured Solutions</h2>
+    <p>A collection of enterprise and web solutions demonstrating my ability to automate payroll, integrate ERP systems, and build reliable web applications.</p>
+  </div>
+
+  <div class="project-filters">
+    <button type="button" class="filter-pill active" onclick="filterProjects('all', this)">All</button>
+    <button type="button" class="filter-pill" onclick="filterProjects('hris', this)">Payroll &amp; HRIS</button>
+    <button type="button" class="filter-pill" onclick="filterProjects('erp', this)">SAP &amp; APIs</button>
+    <button type="button" class="filter-pill" onclick="filterProjects('web', this)">Web Development</button>
+    <button type="button" class="filter-pill" onclick="filterProjects('sql', this)">SQL &amp; Reporting</button>
+  </div>
+
+  <div class="solutions-grid">
+
+    <!-- Card 1 -->
+    <div class="solution-card" data-tags="hris sql">
+      <div class="solution-banner">
+        <strong>PAYROLL &amp; HRIS SUITE</strong>
+        <span>50+ Active Users • 30% Faster Processing</span>
+      </div>
+
+      <div class="solution-body">
+        <h3 class="solution-title">Automated Payroll &amp; HRIS Platform</h3>
+        <div class="tech-tags">
+          <span class="t-badge t-blue">PHP</span>
+          <span class="t-badge t-sky">CodeIgniter</span>
+          <span class="t-badge t-teal">React</span>
+          <span class="t-badge t-slate">SQL</span>
+        </div>
+
+        <div class="sol-section">
+          <h4>Business Problem</h4>
+          <p>Organizations relied on manual spreadsheets for leave tracking, approval routing, and statutory deductions, causing delays and compliance risks.</p>
+        </div>
+
+        <div class="sol-section">
+          <h4>Solution</h4>
+          <p>Designed and implemented an end-to-end Payroll and HRIS web suite automating employee records, multi-tier leave approvals, and PAYE, NHIF, and NSSF calculations.</p>
+        </div>
+
+        <div class="sol-section">
+          <h4>Key Features</h4>
+          <ul>
+            <li>Automated PAYE, NHIF &amp; NSSF tax engine</li>
+            <li>Multi-level leave &amp; payroll approval workflows</li>
+            <li>Custom Jasper payroll &amp; audit reports</li>
+            <li>Role-based HR and Finance dashboards</li>
+          </ul>
+        </div>
+
+        <div class="sol-section">
+          <h4>Key Insights &amp; Outcomes</h4>
+          <ul>
+            <li>Reduced monthly payroll processing time by <strong>30%</strong>.</li>
+            <li>Adopted across <strong>3+ client organizations</strong> supporting 50+ users.</li>
+            <li>Eliminated manual statutory calculation errors.</li>
+          </ul>
+        </div>
+
+        <button type="button" class="details-accordion" onclick="toggleMoreDetails(this)">
+          <span>More Details</span>
+          <span>&#9662;</span>
+        </button>
+        <div class="accordion-panel">
+          <h5>My Role</h5>
+          <p>Full-stack feature development, SQL database modeling, statutory tax logic, Jasper report design, and end-user training.</p>
+          <h5>Technologies Used</h5>
+          <ul>
+            <li>PHP (CodeIgniter &amp; Laravel)</li>
+            <li>React.js &amp; JavaScript (ES6)</li>
+            <li>MySQL &amp; Microsoft SQL</li>
+            <li>Jasper Reports</li>
+          </ul>
+        </div>
+
+        <a href="https://github.com" target="_blank" class="btn-github">
+          <i class="fa-brands fa-github"></i> View in GitHub
+        </a>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="solution-card" data-tags="erp sql">
+      <div class="solution-banner" style="background: linear-gradient(135deg, #0f172a, #1d4ed8);">
+        <strong>SAP BUSINESS ONE INTEGRATION</strong>
+        <span>REST API Sync • Automated ERP Journal Entries</span>
+      </div>
+
+      <div class="solution-body">
+        <h3 class="solution-title">SAP Business One Payroll Integration</h3>
+        <div class="tech-tags">
+          <span class="t-badge t-blue">REST APIs</span>
+          <span class="t-badge t-amber">SAP Business One</span>
+          <span class="t-badge t-slate">SQL</span>
+          <span class="t-badge t-sky">Laravel</span>
+        </div>
+
+        <div class="sol-section">
+          <h4>Business Problem</h4>
+          <p>Finance teams had to manually re-key finalized payroll summaries into SAP Business One every pay cycle, slowing down month-end reconciliation.</p>
+        </div>
+
+        <div class="sol-section">
+          <h4>Solution</h4>
+          <p>Built an automated REST API integration pipeline connecting the HRIS payroll engine directly with SAP Business One to post balanced financial journal entries.</p>
+        </div>
+
+        <div class="sol-section">
+          <h4>Key Features</h4>
+          <ul>
+            <li>Automated general ledger journal entry posting</li>
+            <li>Departmental cost-center mapping</li>
+            <li>Payload validation and error logging</li>
+            <li>Real-time sync status notifications</li>
+          </ul>
+        </div>
+
+        <div class="sol-section">
+          <h4>Key Insights &amp; Outcomes</h4>
+          <ul>
+            <li>Eliminated duplicate manual data entry for Finance staff.</li>
+            <li>Accelerated month-end accounting reconciliation.</li>
+            <li>Maintained 100% audit trail consistency between HR and ERP.</li>
+          </ul>
+        </div>
+
+        <button type="button" class="details-accordion" onclick="toggleMoreDetails(this)">
+          <span>More Details</span>
+          <span>&#9662;</span>
+        </button>
+        <div class="accordion-panel">
+          <h5>My Role</h5>
+          <p>API endpoint architecture, SAP Business One Service Layer integration, SQL data mapping, and UAT testing with Finance teams.</p>
+          <h5>Technologies Used</h5>
+          <ul>
+            <li>PHP (Laravel) &amp; RESTful JSON APIs</li>
+            <li>SAP Business One Service Layer</li>
+            <li>Microsoft SQL &amp; PostgreSQL</li>
+          </ul>
+        </div>
+
+        <a href="https://github.com" target="_blank" class="btn-github">
+          <i class="fa-brands fa-github"></i> View in GitHub
+        </a>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="solution-card" data-tags="web sql">
+      <div class="solution-banner" style="background: linear-gradient(135deg, #1d4ed8, #0284c7);">
+        <strong>CORPORATE &amp; INVENTORY PORTALS</strong>
+        <span>Responsive Web • Stock Control • Security</span>
+      </div>
+
+      <div class="solution-body">
+        <h3 class="solution-title">Corporate &amp; Inventory Web Platforms</h3>
+        <div class="tech-tags">
+          <span class="t-badge t-amber">PHP</span>
+          <span class="t-badge t-blue">MySQL</span>
+          <span class="t-badge t-teal">JavaScript</span>
+          <span class="t-badge t-slate">HTML/CSS</span>
+        </div>
+
+        <div class="sol-section">
+          <h4>Business Problem</h4>
+          <p>Corporate clients and retail stores needed secure, modern websites and centralized stock tracking tools to manage products and engage customers online.</p>
+        </div>
+
+        <div class="sol-section">
+          <h4>Solution</h4>
+          <p>Designed, deployed, and administered responsive corporate websites and web-based inventory portals for Utumishi Investment Limited, Level Up Tech Store, and SMEs.</p>
+        </div>
+
+        <div class="sol-section">
+          <h4>Key Features</h4>
+          <ul>
+            <li>Mobile-first responsive UI and service catalogs</li>
+            <li>Admin dashboard for stock and content updates</li>
+            <li>Product search and category filtering</li>
+            <li>Routine security hardening and uptime monitoring</li>
+          </ul>
+        </div>
+
+        <div class="sol-section">
+          <h4>Key Insights &amp; Outcomes</h4>
+          <ul>
+            <li>Digitized product showcases and stock tracking workflows.</li>
+            <li>Maintained high availability and strong site performance.</li>
+            <li>Delivered tailored web solutions for multiple SMEs.</li>
+          </ul>
+        </div>
+
+        <button type="button" class="details-accordion" onclick="toggleMoreDetails(this)">
+          <span>More Details</span>
+          <span>&#9662;</span>
+        </button>
+        <div class="accordion-panel">
+          <h5>My Role</h5>
+          <p>End-to-end UI/UX design, front-end and back-end coding, database setup, hosting deployment, and ongoing website administration.</p>
+          <h5>Technologies Used</h5>
+          <ul>
+            <li>HTML5, CSS3, JavaScript (ES6)</li>
+            <li>PHP &amp; MySQL</li>
+            <li>Git &amp; GitHub</li>
+          </ul>
+        </div>
+
+        <a href="https://github.com" target="_blank" class="btn-github">
+          <i class="fa-brands fa-github"></i> View in GitHub
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 
     <!-- Skills Section -->
     <section id="skills">
