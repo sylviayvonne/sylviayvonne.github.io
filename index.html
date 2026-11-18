@@ -86,6 +86,48 @@
       .cta-group, .socials { justify-content: center; }
       .nav-links { display: none; }
     }
+    /*experience page*/
+    /* Centered Section Header */
+.section-head-center { text-align: center; max-width: 720px; margin: 0 auto 42px; }
+.section-head-center h2 { font-size: 2.1rem; font-weight: 800; color: #0f172a; margin-bottom: 10px; letter-spacing: -0.5px; }
+.section-head-center p { color: #64748b; font-size: 0.98rem; }
+
+/* Experience Cards (Matching Screenshot) */
+.exp-stack { display: flex; flex-direction: column; gap: 26px; }
+.exp-box {
+  background: #ffffff;
+  border: 1px solid #f1f5f9;
+  border-radius: 16px;
+  padding: 32px 36px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.exp-box:hover { transform: translateY(-2px); box-shadow: 0 14px 34px rgba(15, 23, 42, 0.08); }
+
+.exp-top-row { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px; margin-bottom: 4px; }
+.exp-role { font-size: 1.32rem; font-weight: 700; color: #1e293b; }
+.exp-date-text { font-size: 0.92rem; font-weight: 500; color: #64748b; }
+.exp-company-line { font-size: 0.96rem; font-weight: 600; color: #475569; margin-bottom: 16px; }
+.exp-company-line span { color: #94a3b8; font-weight: 400; margin: 0 6px; }
+.exp-summary { font-size: 0.95rem; color: #475569; line-height: 1.68; margin-bottom: 18px; }
+
+.exp-achievements-title { font-size: 0.95rem; font-weight: 700; color: #1e293b; margin-bottom: 10px; }
+.exp-achievements-list { padding-left: 20px; margin-bottom: 20px; color: #475569; font-size: 0.94rem; }
+.exp-achievements-list li { margin-bottom: 6px; }
+.exp-achievements-list strong { color: #0f172a; font-weight: 700; }
+
+/* Two Rows of Badges (Gray Metrics + Blue Tech Pills) */
+.metric-pills-row { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 12px; }
+.metric-pill { background: #f1f5f9; color: #334155; font-size: 0.82rem; font-weight: 600; padding: 6px 14px; border-radius: 20px; }
+
+.skill-pills-row { display: flex; flex-wrap: wrap; gap: 10px; }
+.skill-pill { background: #eff6ff; color: #2563eb; font-size: 0.82rem; font-weight: 600; padding: 6px 14px; border-radius: 20px; }
+
+@media (max-width: 768px) {
+  .exp-box { padding: 24px 20px; }
+}
+
+
   </style>
 </head>
 <body>
@@ -183,6 +225,131 @@
       </div>
     </div>
 
+
+    <section id="experience">
+  <div class="section-head-center">
+    <h2>Professional Experience</h2>
+    <p>Practical experience across software development, HRIS &amp; payroll implementation, systems administration, and IT support.</p>
+  </div>
+
+  <div class="exp-stack">
+    <!-- Role 1 -->
+    <div class="exp-box">
+      <div class="exp-top-row">
+        <h3 class="exp-role">Software Developer (Attaché → Intern → Full-time)</h3>
+        <span class="exp-date-text">Jan 2023 – Aug 2025</span>
+      </div>
+      <div class="exp-company-line">Sofclans Technologies Limited <span>|</span> Nairobi, Kenya</div>
+      <p class="exp-summary">
+        Designed and implemented enterprise Payroll and HR Information Systems (HRIS) improving operational efficiency and statutory compliance for diverse organizations. Automated leave management, multi-level payroll approvals, and reporting workflows while integrating payroll outputs directly with SAP Business One.
+      </p>
+      <div class="exp-achievements-title">Key Achievements</div>
+      <ul class="exp-achievements-list">
+        <li>Reduced payroll processing time by approximately <strong>30%</strong> through end-to-end workflow automation.</li>
+        <li>Delivered HRIS solutions adopted by <strong>3+ client organizations</strong>, ensuring smooth system roll-out and zero manual errors.</li>
+        <li>Trained and provided technical support to <strong>50+ end-users</strong> across HR and Finance departments.</li>
+        <li>Maintained <strong>100% statutory compliance</strong> with PAYE, NHIF, and NSSF regulations and accurate SAP financial journal entries.</li>
+      </ul>
+      <div class="metric-pills-row">
+        <span class="metric-pill">50+ Users Supported</span>
+        <span class="metric-pill">30% Faster Payroll</span>
+        <span class="metric-pill">3+ Client Organizations</span>
+        <span class="metric-pill">100% Statutory Compliance</span>
+      </div>
+      <div class="skill-pills-row">
+        <span class="skill-pill">PHP (CodeIgniter &amp; Laravel)</span>
+        <span class="skill-pill">React</span>
+        <span class="skill-pill">SQL</span>
+        <span class="skill-pill">REST APIs</span>
+        <span class="skill-pill">SAP Business One</span>
+        <span class="skill-pill">Jasper Reports</span>
+      </div>
+    </div>
+
+    <!-- Role 2 -->
+    <div class="exp-box">
+      <div class="exp-top-row">
+        <h3 class="exp-role">Web Developer / Website Administrator</h3>
+        <span class="exp-date-text">Nov 2020 – Present</span>
+      </div>
+      <div class="exp-company-line">Utumishi Investment Limited <span>|</span> Nairobi, Kenya</div>
+      <p class="exp-summary">
+        Designed, developed, and maintained corporate web platforms to strengthen online presence and client engagement. Managed ongoing content updates, server performance optimization, and routine website security audits.
+      </p>
+      <div class="exp-achievements-title">Key Achievements</div>
+      <ul class="exp-achievements-list">
+        <li>Designed and launched responsive corporate web interfaces tailored to business goals.</li>
+        <li>Maintained continuous site uptime and security through proactive vulnerability checks and performance tuning.</li>
+      </ul>
+      <div class="metric-pills-row">
+        <span class="metric-pill">4+ Years Tenure</span>
+        <span class="metric-pill">Proactive Security Audits</span>
+      </div>
+      <div class="skill-pills-row">
+        <span class="skill-pill">Web Design</span>
+        <span class="skill-pill">HTML5 &amp; CSS3</span>
+        <span class="skill-pill">JavaScript</span>
+        <span class="skill-pill">PHP</span>
+        <span class="skill-pill">Website Security</span>
+      </div>
+    </div>
+
+    <!-- Role 3 -->
+    <div class="exp-box">
+      <div class="exp-top-row">
+        <h3 class="exp-role">System Administrator</h3>
+        <span class="exp-date-text">Mar 2020 – Oct 2022</span>
+      </div>
+      <div class="exp-company-line">Level Up Tech Store <span>|</span> Nairobi, Kenya</div>
+      <p class="exp-summary">
+        Oversaw company website administration, digital inventory management systems, and daily IT operations. Provided hands-on technical troubleshooting and user support to keep retail and backend systems running smoothly.
+      </p>
+      <div class="exp-achievements-title">Key Achievements</div>
+      <ul class="exp-achievements-list">
+        <li>Streamlined stock tracking and product updates across web and inventory management platforms.</li>
+        <li>Ensured reliable daily IT operations and fast issue resolution for staff and customers.</li>
+      </ul>
+      <div class="metric-pills-row">
+        <span class="metric-pill">Inventory Systems Managed</span>
+        <span class="metric-pill">Daily IT Support</span>
+      </div>
+      <div class="skill-pills-row">
+        <span class="skill-pill">System Administration</span>
+        <span class="skill-pill">Inventory Management</span>
+        <span class="skill-pill">Web Administration</span>
+        <span class="skill-pill">Technical Support</span>
+      </div>
+    </div>
+
+    <!-- Role 4 -->
+    <div class="exp-box">
+      <div class="exp-top-row">
+        <h3 class="exp-role">Freelance Web Developer &amp; IT Support Intern</h3>
+        <span class="exp-date-text">2018 – Present</span>
+      </div>
+      <div class="exp-company-line">Freelance &amp; Africa Nazarene University (Town Campus) <span>|</span> Nairobi, Kenya</div>
+      <p class="exp-summary">
+        Developed custom websites for SMEs and corporate clients while collaborating on front-end web projects. Previously supported university network administration, OS/software installations, and computer lab maintenance as an IT Support Student Intern.
+      </p>
+      <div class="exp-achievements-title">Key Achievements</div>
+      <ul class="exp-achievements-list">
+        <li>Delivered responsive websites for multiple SMEs and corporate clients.</li>
+        <li>Supported campus network reliability, hardware setup, and daily computer lab operations.</li>
+      </ul>
+      <div class="metric-pills-row">
+        <span class="metric-pill">SME &amp; Corporate Clients</span>
+        <span class="metric-pill">Lab &amp; Network Support</span>
+      </div>
+      <div class="skill-pills-row">
+        <span class="skill-pill">Front-End Development</span>
+        <span class="skill-pill">PHP &amp; MySQL</span>
+        <span class="skill-pill">Network Administration</span>
+        <span class="skill-pill">Hardware &amp; OS Setup</span>
+      </div>
+    </div>
+  </div>
+</section>
+
     <!-- Skills Section -->
     <section id="skills">
       <h2>Technical Skills &amp; Competencies</h2>
@@ -209,3 +376,9 @@
         <div class="card">
           <h3>Enterprise &amp; Integrations</h3>
           <div class="tag-list">
+          </div>
+        </div>
+
+
+
+
