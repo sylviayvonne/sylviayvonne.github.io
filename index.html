@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sylvia Yvonne | Software Developer &amp; HRIS Specialist</title>
+  <link href="https://googleapis.com" rel="stylesheet">
+  <link rel="stylesheet" href="https://cloudflare.com">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+    body { background-color: #ffffff; color: #1e293b; line-height: 1.6; }
+    
+    /* Navigation */
+    nav { display: flex; justify-content: space-between; align-items: center; max-width: 1150px; margin: 0 auto; padding: 24px 20px; position: sticky; top: 0; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(6px); z-index: 100; }
+    .logo { font-size: 1.45rem; font-weight: 800; color: #2563eb; text-decoration: none; }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a { text-decoration: none; color: #475569; font-size: 0.95rem; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: #2563eb; }
+
+    /* Main Container */
+    .container { max-width: 1150px; margin: 0 auto; padding: 30px 20px 60px; }
+
+    /* Hero Section */
+    .hero { display: flex; align-items: center; gap: 65px; margin-top: 20px; margin-bottom: 55px; }
+    .hero-img-wrapper { flex-shrink: 0; }
+    .hero-img { width: 270px; height: 270px; border-radius: 50%; object-fit: cover; border: 5px solid #2563eb; box-shadow: 0 10px 25px rgba(37, 99, 235, 0.15); background: #eff6ff; }
+    
+    .hero-content h1 { font-size: 2.75rem; font-weight: 800; color: #0f172a; letter-spacing: -0.5px; margin-bottom: 8px; }
+    .hero-subtitle { font-size: 1.2rem; font-weight: 600; color: #2563eb; margin-bottom: 18px; }
+    .hero-bio { color: #475569; font-size: 0.97rem; margin-bottom: 26px; max-width: 670px; }
+
+    /* Top 4 Metrics Cards */
+    .metrics-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 26px; }
+    .metric-card { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px 10px; text-align: center; }
+    .metric-card h3 { font-size: 1.25rem; font-weight: 700; color: #0f172a; margin-bottom: 2px; }
+    .metric-card p { font-size: 0.78rem; color: #64748b; font-weight: 500; }
+
+    /* Action Buttons */
+    .cta-group { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 24px; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 11px 20px; border-radius: 8px; font-size: 0.92rem; font-weight: 600; text-decoration: none; transition: all 0.2s; cursor: pointer; }
+    .btn-outline { border: 1px solid #cbd5e1; color: #2563eb; background: #ffffff; }
+    .btn-outline:hover { border-color: #2563eb; background: #eff6ff; }
+    .btn-primary { background: #2563eb; color: #ffffff; border: 1px solid #2563eb; }
+    .btn-primary:hover { background: #1d4ed8; }
+
+    /* Social Icons */
+    .socials { display: flex; gap: 18px; }
+    .socials a { color: #475569; font-size: 1.4rem; transition: color 0.2s; }
+    .socials a:hover { color: #2563eb; }
+
+    /* Divider & Bottom Highlight Row */
+    hr { border: 0; border-top: 1px solid #e2e8f0; margin: 40px 0; }
+    .highlights-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-bottom: 40px; }
+    .highlight-card { background: #f8fafc; border-radius: 14px; padding: 28px 20px; text-align: center; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03); border: 1px solid #f1f5f9; }
+    .highlight-card h2 { font-size: 2rem; font-weight: 800; color: #2563eb; margin-bottom: 6px; }
+    .highlight-card p { font-size: 0.92rem; color: #475569; font-weight: 500; }
+
+    /* Content Sections */
+    section { padding: 55px 0; border-top: 1px solid #e2e8f0; }
+    section h2 { font-size: 1.85rem; font-weight: 800; margin-bottom: 24px; color: #0f172a; }
+    
+    /* Skills Grid */
+    .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+    .card { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 22px; }
+    .card h3 { font-size: 1.1rem; font-weight: 700; color: #0f172a; margin-bottom: 10px; }
+    .card p, .card li { font-size: 0.92rem; color: #475569; }
+    .tag-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+    .tag { background: #eff6ff; color: #2563eb; font-size: 0.82rem; font-weight: 600; padding: 5px 11px; border-radius: 6px; }
+
+    /* Experience Timeline */
+    .exp-item { margin-bottom: 28px; padding-left: 18px; border-left: 3px solid #2563eb; }
+    .exp-item h3 { font-size: 1.15rem; font-weight: 700; color: #0f172a; }
+    .exp-meta { font-size: 0.88rem; font-weight: 600; color: #2563eb; margin-bottom: 8px; }
+    .exp-item ul { padding-left: 18px; color: #475569; font-size: 0.93rem; }
+    .exp-item li { margin-bottom: 5px; }
+
+    /* Contact Box */
+    .contact-box { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 14px; padding: 30px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 20px; }
+    .contact-info p { margin-bottom: 8px; font-size: 0.98rem; color: #334155; }
+    .contact-info i { color: #2563eb; width: 22px; }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 900px) {
+      .hero { flex-direction: column; text-align: center; gap: 35px; }
+      .metrics-grid, .highlights-grid { grid-template-columns: repeat(2, 1fr); }
+      .cta-group, .socials { justify-content: center; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#" class="logo">Sylvia.</a>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container" id="home">
+    <div class="hero">
+      <!-- Profile Image -->
+      <div class="hero-img-wrapper">
+        <img src="profile.jpg" alt="Sylvia Yvonne" class="hero-img">
+      </div>
+
+      <!-- Intro & Stats -->
+      <div class="hero-content">
+        <h1>Sylvia Yvonne</h1>
+        <div class="hero-subtitle">Software Developer • HRIS &amp; Payroll Specialist • Web Administrator</div>
+        <p class="hero-bio">
+          Computer Science graduate with 3+ years of hands-on experience designing and implementing Payroll and HR Information Systems (HRIS), web applications, and business process automation. Skilled in PHP (CodeIgniter, Laravel), React, SQL, REST APIs, and SAP Business One integration, with proven success ensuring statutory compliance (PAYE, NHIF, NSSF) and supporting 50+ HR and Finance end-users.
+        </p>
+
+        <!-- 4 Small Stat Boxes -->
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <h3>50+</h3>
+            <p>End-Users Supported</p>
+          </div>
+          <div class="metric-card">
+            <h3>30%</h3>
+            <p>Faster Payroll</p>
+          </div>
+          <div class="metric-card">
+            <h3>3+</h3>
+            <p>HRIS Rollouts</p>
+          </div>
+          <div class="metric-card">
+            <h3>100%</h3>
+            <p>Statutory Compliance</p>
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="cta-group">
+          <a href="resume.pdf" target="_blank" class="btn btn-outline">
+            <i class="fa-regular fa-eye"></i> Preview Resume
+          </a>
+          <a href="resume.pdf" download class="btn btn-primary">
+            <i class="fa-solid fa-download"></i> Download Resume
+          </a>
+          <a href="#contact" class="btn btn-outline">
+            <i class="fa-regular fa-envelope"></i> Let's Connect
+          </a>
+        </div>
+
+        <!-- Social Links -->
+        <div class="socials">
+          <a href="https://github.com" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="mailto:sylviayvonne65@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <hr />
+
+    <!-- Bottom 4 Highlight Cards -->
+    <div class="highlights-grid">
+      <div class="highlight-card">
+        <h2>3+</h2>
+        <p>Years Experience</p>
+      </div>
+      <div class="highlight-card">
+        <h2>10+</h2>
+        <p>Systems &amp; Websites</p>
+      </div>
+      <div class="highlight-card">
+        <h2>12+</h2>
+        <p>Technologies</p>
+      </div>
+      <div class="highlight-card">
+        <h2>7+</h2>
+        <p>Certifications</p>
+      </div>
+    </div>
+
+    <!-- Skills Section -->
+    <section id="skills">
+      <h2>Technical Skills &amp; Competencies</h2>
+      <div class="cards-grid">
+        <div class="card">
+          <h3>Programming &amp; Frameworks</h3>
+          <div class="tag-list">
+            <span class="tag">PHP (CodeIgniter)</span>
+            <span class="tag">Laravel</span>
+            <span class="tag">React.js</span>
+            <span class="tag">JavaScript (ES6)</span>
+            <span class="tag">HTML5 &amp; CSS3</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Databases &amp; Reporting</h3>
+          <div class="tag-list">
+            <span class="tag">MySQL</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">Microsoft SQL</span>
+            <span class="tag">Jasper Reports</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Enterprise &amp; Integrations</h3>
+          <div class="tag-list">
