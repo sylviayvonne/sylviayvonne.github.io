@@ -126,6 +126,116 @@
 @media (max-width: 768px) {
   .exp-box { padding: 24px 20px; }
 }
+/* Certifications Grid */
+.cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 22px; }
+.cert-box {
+  background: #ffffff;
+  border: 1px solid #f1f5f9;
+  border-radius: 16px;
+  padding: 26px 28px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.cert-box:hover { transform: translateY(-2px); box-shadow: 0 14px 34px rgba(15, 23, 42, 0.08); }
+.cert-badge-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+.cert-issuer { font-size: 0.82rem; font-weight: 700; color: #2563eb; text-transform: uppercase; letter-spacing: 0.4px; }
+.cert-date { font-size: 0.82rem; font-weight: 500; color: #64748b; background: #f8fafc; padding: 3px 10px; border-radius: 12px; border: 1px solid #e2e8f0; }
+.cert-title { font-size: 1.08rem; font-weight: 700; color: #0f172a; line-height: 1.4; }
+
+/* Education Cards */
+.edu-stack { display: flex; flex-direction: column; gap: 22px; max-width: 900px; margin: 0 auto; }
+.edu-box {
+  background: #ffffff;
+  border: 1px solid #f1f5f9;
+  border-radius: 16px;
+  padding: 28px 34px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+  display: flex;
+  align-items: flex-start;
+  gap: 22px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.edu-box:hover { transform: translateY(-2px); box-shadow: 0 14px 34px rgba(15, 23, 42, 0.08); }
+.edu-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: #eff6ff;
+  color: #2563eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+.edu-content { flex: 1; }
+.edu-top { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px; margin-bottom: 4px; }
+.edu-degree { font-size: 1.2rem; font-weight: 700; color: #0f172a; }
+.edu-period { font-size: 0.88rem; font-weight: 600; color: #2563eb; background: #eff6ff; padding: 4px 12px; border-radius: 20px; }
+.edu-school { font-size: 0.96rem; font-weight: 600; color: #475569; margin-bottom: 6px; }
+.edu-note { font-size: 0.9rem; color: #64748b; }
+
+@media (max-width: 768px) {
+  .edu-box { flex-direction: column; padding: 24px 20px; gap: 14px; }
+}
+/* View Certificate Link */
+.cert-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 16px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #2563eb;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.cert-link:hover { color: #1d4ed8; text-decoration: underline; }
+
+/* Certificate Preview Modal */
+.cert-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.75);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.cert-modal.open { display: flex; }
+.cert-modal-box {
+  background: #ffffff;
+  width: 100%;
+  max-width: 880px;
+  height: 85vh;
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+.cert-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 22px;
+  border-bottom: 1px solid #e2e8f0;
+  background: #f8fafc;
+}
+.cert-modal-header h3 { font-size: 1rem; font-weight: 700; color: #0f172a; }
+.cert-modal-actions { display: flex; align-items: center; gap: 14px; }
+.cert-open-tab { font-size: 0.85rem; font-weight: 600; color: #2563eb; text-decoration: none; }
+.cert-close-btn { background: none; border: none; font-size: 1.5rem; line-height: 1; color: #64748b; cursor: pointer; }
+.cert-modal-body { flex: 1; background: #e2e8f0; }
+.cert-modal-body iframe { width: 100%; height: 100%; border: none; }
 
 
   </style>
@@ -225,7 +335,7 @@
       </div>
     </div>
 
-
+        <!-- Experience Section -->
     <section id="experience">
   <div class="section-head-center">
     <h2>Professional Experience</h2>
@@ -350,9 +460,266 @@
   </div>
 </section>
 
+<!-- certification Section -->
+<!-- <section id="certifications">
+  <div class="section-head-center">
+    <h2>Certifications &amp; Trainings</h2>
+    <p>Verified credentials across networking, cybersecurity, and modern full-stack web development.</p>
+  </div>
+
+  <div class="cert-grid">
+    <div class="cert-box">
+      <div>
+        <div class="cert-badge-top">
+          <span class="cert-issuer">CISCO</span>
+          <span class="cert-date">May 2023</span>
+        </div>
+        <h3 class="cert-title">CCNA: Switching, Routing, and Wireless Essentials</h3>
+      </div>
+    </div>
+
+    <div class="cert-box">
+      <div>
+        <div class="cert-badge-top">
+          <span class="cert-issuer">CyberPro Defence College</span>
+          <span class="cert-date">May 2023</span>
+        </div>
+        <h3 class="cert-title">Cybersecurity Awareness Training</h3>
+      </div>
+    </div>
+
+    <div class="cert-box">
+      <div>
+        <div class="cert-badge-top">
+          <span class="cert-issuer">Udemy</span>
+          <span class="cert-date">May 2023</span>
+        </div>
+        <h3 class="cert-title">Modern JavaScript for React JS – ES6</h3>
+      </div>
+    </div>
+
+    <div class="cert-box">
+      <div>
+        <div class="cert-badge-top">
+          <span class="cert-issuer">Udemy</span>
+          <span class="cert-date">Mar 2023</span>
+        </div>
+        <h3 class="cert-title">The Complete React.js Course – Basics to Advanced</h3>
+      </div>
+    </div>
+
+    <div class="cert-box">
+      <div>
+        <div class="cert-badge-top">
+          <span class="cert-issuer">CISCO</span>
+          <span class="cert-date">Nov 2022</span>
+        </div>
+        <h3 class="cert-title">CCNAv7: Introduction to Networks</h3>
+      </div>
+    </div>
+
+    <div class="cert-box">
+      <div>
+        <div class="cert-badge-top">
+          <span class="cert-issuer">Coursera</span>
+          <span class="cert-date">Nov 2020</span>
+        </div>
+        <h3 class="cert-title">Building Web Applications in PHP</h3>
+      </div>
+    </div>
+
+    <div class="cert-box">
+      <div>
+        <div class="cert-badge-top">
+          <span class="cert-issuer">Serianu Limited</span>
+          <span class="cert-date">Oct 2020</span>
+        </div>
+        <h3 class="cert-title">Serianu Cyber Immersion Program (SCIP)</h3>
+      </div>
+    </div>
+  </div>
+</section> -->
+<section id="certifications">
+  <div class="section-head-center">
+    <h2>Certifications &amp; Trainings</h2>
+    <p>Verified credentials across networking, cybersecurity, and modern full-stack web development.</p>
+  </div>
+
+  <div class="cert-grid">
+    <div class="cert-box">
+      <div>
+        <div class="cert-badge-top">
+          <span class="cert-issuer">CISCO</span>
+          <span class="cert-date">May 2023</span>
+        </div>
+        <h3 class="cert-title">CCNA: Switching, Routing, and Wireless Essentials</h3>
+      </div>
+      <button type="button" class="cert-link" onclick="openCert('CCNA: Switching, Routing, and Wireless Essentials', 'certificates/ccna-srwe.pdf')">
+        <i class="fa-regular fa-eye"></i> View Certificate
+      </button>
+    </div>
+
+    <div class="cert-box">
+      <div>
+        <div class="cert-badge-top">
+          <span class="cert-issuer">CyberPro Defence College</span>
+          <span class="cert-date">May 2023</span>
+        </div>
+        <h3 class="cert-title">Cybersecurity Awareness Training</h3>
+      </div>
+      <button type="button" class="cert-link" onclick="openCert('Cybersecurity Awareness Training', 'certificates/cyberpro.pdf')">
+        <i class="fa-regular fa-eye"></i> View Certificate
+      </button>
+    </div>
+
+    <div class="cert-box">
+      <div>
+        <div class="cert-badge-top">
+          <span class="cert-issuer">Udemy</span>
+          <span class="cert-date">May 2023</span>
+        </div>
+        <h3 class="cert-title">Modern JavaScript for React JS – ES6</h3>
+      </div>
+      <button type="button" class="cert-link" onclick="openCert('Modern JavaScript for React JS – ES6', 'certificates/udemy-es6.pdf')">
+        <i class="fa-regular fa-eye"></i> View Certificate
+      </button>
+    </div>
+
+    <div class="cert-box">
+      <div>
+        <div class="cert-badge-top">
+          <span class="cert-issuer">Udemy</span>
+          <span class="cert-date">Mar 2023</span>
+        </div>
+        <h3 class="cert-title">The Complete React.js Course – Basics to Advanced</h3>
+      </div>
+      <button type="button" class="cert-link" onclick="openCert('The Complete React.js Course', 'certificates/udemy-react.pdf')">
+        <i class="fa-regular fa-eye"></i> View Certificate
+      </button>
+    </div>
+
+    <div class="cert-box">
+      <div>
+        <div class="cert-badge-top">
+          <span class="cert-issuer">CISCO</span>
+          <span class="cert-date">Nov 2022</span>
+        </div>
+        <h3 class="cert-title">CCNAv7: Introduction to Networks</h3>
+      </div>
+      <button type="button" class="cert-link" onclick="openCert('CCNAv7: Introduction to Networks', 'certificates/ccna-intro.pdf')">
+        <i class="fa-regular fa-eye"></i> View Certificate
+      </button>
+    </div>
+
+    <div class="cert-box">
+      <div>
+        <div class="cert-badge-top">
+          <span class="cert-issuer">Coursera</span>
+          <span class="cert-date">Nov 2020</span>
+        </div>
+        <h3 class="cert-title">Building Web Applications in PHP</h3>
+      </div>
+      <button type="button" class="cert-link" onclick="openCert('Building Web Applications in PHP', 'certificates/coursera-php.pdf')">
+        <i class="fa-regular fa-eye"></i> View Certificate
+      </button>
+    </div>
+
+    <div class="cert-box">
+      <div>
+        <div class="cert-badge-top">
+          <span class="cert-issuer">Serianu Limited</span>
+          <span class="cert-date">Oct 2020</span>
+        </div>
+        <h3 class="cert-title">Serianu Cyber Immersion Program (SCIP)</h3>
+      </div>
+      <button type="button" class="cert-link" onclick="openCert('Serianu Cyber Immersion Program (SCIP)', 'certificates/serianu-scip.pdf')">
+        <i class="fa-regular fa-eye"></i> View Certificate
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Certificate Viewer Modal -->
+<div class="cert-modal" id="certModal" onclick="if(event.target === this) closeCert()">
+  <div class="cert-modal-box">
+    <div class="cert-modal-header">
+      <h3 id="certModalTitle">Certificate Preview</h3>
+      <div class="cert-modal-actions">
+        <a id="certOpenTab" href="#" target="_blank" class="cert-open-tab"><i class="fa-solid fa-up-right-from-square"></i> Open Full</a>
+        <button type="button" class="cert-close-btn" onclick="closeCert()" aria-label="Close">&times;</button>
+      </div>
+    </div>
+    <div class="cert-modal-body">
+      <iframe id="certFrame" src="" title="Certificate Document"></iframe>
+    </div>
+  </div>
+</div>
+
+<script>
+  function openCert(title, fileUrl) {
+    document.getElementById('certModalTitle').textContent = title;
+    document.getElementById('certFrame').src = fileUrl;
+    document.getElementById('certOpenTab').href = fileUrl;
+    document.getElementById('certModal').classList.add('open');
+  }
+
+  function closeCert() {
+    document.getElementById('certModal').classList.remove('open');
+    document.getElementById('certFrame').src = '';
+  }
+</script>
+
+ <!-- Education Section -->
+<section id="education">
+  <div class="section-head-center">
+    <h2>Education &amp; Qualifications</h2>
+    <p>Academic foundation in computer science and information technology.</p>
+  </div>
+
+  <div class="edu-stack">
+    <div class="edu-box">
+      <div class="edu-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+      <div class="edu-content">
+        <div class="edu-top">
+          <h3 class="edu-degree">Bachelor of Computer Science</h3>
+          <span class="edu-period">May 2020 – Aug 2024</span>
+        </div>
+        <div class="edu-school">Africa Nazarene University</div>
+        <p class="edu-note">Focused on software engineering, database management systems, networking, and enterprise application development.</p>
+      </div>
+    </div>
+
+    <div class="edu-box">
+      <div class="edu-icon"><i class="fa-solid fa-laptop-code"></i></div>
+      <div class="edu-content">
+        <div class="edu-top">
+          <h3 class="edu-degree">Diploma in Information Technology</h3>
+          <span class="edu-period">Sep 2017 – Nov 2019</span>
+        </div>
+        <div class="edu-school">Africa Nazarene University</div>
+        <p class="edu-note">Built core technical skills in programming, web technologies, systems administration, and IT infrastructure support.</p>
+      </div>
+    </div>
+
+    <div class="edu-box">
+      <div class="edu-icon"><i class="fa-solid fa-school"></i></div>
+      <div class="edu-content">
+        <div class="edu-top">
+          <h3 class="edu-degree">Kenya Certificate of Secondary Education (KCSE)</h3>
+          <span class="edu-period">2013 – 2016</span>
+        </div>
+        <div class="edu-school">Lema Girls’ Secondary School</div>
+      </div>
+    </div>
+  </div>
+</section>
+
     <!-- Skills Section -->
     <section id="skills">
-      <h2>Technical Skills &amp; Competencies</h2>
+      <div class="section-head-center">
+        <h2>Technical Skills &amp; Competencies</h2>
+        <p></p>
+      </div>
       <div class="cards-grid">
         <div class="card">
           <h3>Programming &amp; Frameworks</h3>
@@ -377,7 +744,9 @@
           <h3>Enterprise &amp; Integrations</h3>
           <div class="tag-list">
           </div>
-        </div>
+        </div> 
+
+         
 
 
 
