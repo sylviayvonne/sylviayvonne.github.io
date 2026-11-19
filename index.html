@@ -742,6 +742,156 @@ body.dark-mode .contact-form textarea {
   border-color: #334155;
   color: #f8fafc;
 }
+/* Footer Section */
+footer {
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  padding: 45px 20px 30px;
+  margin-top: 40px;
+}
+
+.footer-container {
+  max-width: 1150px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-brand h3 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #2563eb;
+  margin-bottom: 4px;
+}
+
+.footer-brand p {
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  list-style: none;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #475569;
+  font-size: 0.92rem;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover {
+  color: #2563eb;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 14px;
+}
+
+.footer-socials a {
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  color: #475569;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.footer-socials a:hover {
+  border-color: #2563eb;
+  color: #2563eb;
+  transform: translateY(-2px);
+}
+
+.footer-bottom {
+  border-top: 1px solid #e2e8f0;
+  padding-top: 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  font-size: 0.88rem;
+  color: #64748b;
+}
+
+.back-to-top {
+  text-decoration: none;
+  color: #2563eb;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.back-to-top:hover {
+  text-decoration: underline;
+}
+
+/* Dark Mode Support for Footer */
+body.dark-mode footer {
+  background: #0f172a;
+  border-color: #1e293b;
+}
+
+body.dark-mode .footer-brand p,
+body.dark-mode .footer-bottom {
+  color: #94a3b8;
+}
+
+body.dark-mode .footer-links a {
+  color: #cbd5e1;
+}
+
+body.dark-mode .footer-links a:hover {
+  color: #60a5fa;
+}
+
+body.dark-mode .footer-socials a {
+  background: #1e293b;
+  border-color: #334155;
+  color: #cbd5e1;
+}
+
+body.dark-mode .footer-socials a:hover {
+  border-color: #60a5fa;
+  color: #60a5fa;
+}
+
+body.dark-mode .footer-bottom {
+  border-color: #1e293b;
+}
+
+@media (max-width: 768px) {
+  .footer-top,
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+  .footer-links {
+    justify-content: center;
+  }
+}
 
 
 
@@ -768,10 +918,10 @@ body.dark-mode .contact-form textarea {
     <div class="nav-right">
       <ul class="nav-links" id="navLinks">
         <li><a href="#home" onclick="closeMobileMenu()">Home</a></li>
+        <li><a href="#education" onclick="closeMobileMenu()">Education</a></li>
         <li><a href="#skills" onclick="closeMobileMenu()">Skills</a></li>
         <li><a href="#projects" onclick="closeMobileMenu()">Projects</a></li>
         <li><a href="#experience" onclick="closeMobileMenu()">Experience</a></li>
-        <li><a href="#education" onclick="closeMobileMenu()">Education</a></li>
         <li><a href="#contact" onclick="closeMobileMenu()">Contact</a></li>
       </ul>
 
@@ -872,150 +1022,433 @@ body.dark-mode .contact-form textarea {
       </div>
     </div>
 
-    <hr />
 
-    <!-- Bottom 4 Highlight Cards -->
-    <div class="highlights-grid">
-      <div class="highlight-card">
-        <h2>3+</h2>
-        <p>Years Experience</p>
-      </div>
-      <div class="highlight-card">
-        <h2>10+</h2>
-        <p>Systems &amp; Websites</p>
-      </div>
-      <div class="highlight-card">
-        <h2>12+</h2>
-        <p>Technologies</p>
-      </div>
-      <div class="highlight-card">
-        <h2>7+</h2>
-        <p>Certifications</p>
-      </div>
+
+  <!-- Education Section -->
+  <section id="education">
+    <div class="section-head-center">
+      <h2>Education &amp; Qualifications</h2>
+      <p>Academic foundation in computer science and information technology.</p>
     </div>
 
-        <!-- Experience Section -->
-    <section id="experience">
+    <div class="edu-stack">
+      <div class="edu-box">
+        <div class="edu-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+        <div class="edu-content">
+          <div class="edu-top">
+            <h3 class="edu-degree">Bachelor of Computer Science</h3>
+            <span class="edu-period">May 2020 – Aug 2024</span>
+          </div>
+          <div class="edu-school">Africa Nazarene University</div>
+          <p class="edu-note">Focused on software engineering, database management systems, networking, and enterprise application development.</p>
+        </div>
+      </div>
+
+      <div class="edu-box">
+        <div class="edu-icon"><i class="fa-solid fa-laptop-code"></i></div>
+        <div class="edu-content">
+          <div class="edu-top">
+            <h3 class="edu-degree">Diploma in Information Technology</h3>
+            <span class="edu-period">Sep 2017 – Nov 2019</span>
+          </div>
+          <div class="edu-school">Africa Nazarene University</div>
+          <p class="edu-note">Built core technical skills in programming, web technologies, systems administration, and IT infrastructure support.</p>
+        </div>
+      </div>
+
+      <div class="edu-box">
+        <div class="edu-icon"><i class="fa-solid fa-school"></i></div>
+        <div class="edu-content">
+          <div class="edu-top">
+            <h3 class="edu-degree">Kenya Certificate of Secondary Education (KCSE)</h3>
+            <span class="edu-period">2013 – 2016</span>
+          </div>
+          <div class="edu-school">Lema Girls’ Secondary School</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills">
+        <div class="section-head-center">
+          <h2>Technical Skills &amp; Competencies</h2>
+          <p></p>
+        </div>
+        <div class="cards-grid">
+          <div class="card">
+            <h3>Programming &amp; Frameworks</h3>
+            <div class="tag-list">
+              <span class="tag">PHP (CodeIgniter)</span>
+              <span class="tag">PHP (Laravel)</span>
+              <span class="tag">React.js</span>
+              <span class="tag">JavaScript (ES6)</span>
+              <span class="tag">HTML5 &amp; CSS3</span>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Databases &amp; Backend</h3>
+            <div class="tag-list">
+              <span class="tag">MySQL</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">Microsoft SQL</span>
+              <span class="tag">Git &amp; GitHub</span>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Enterprise &amp; Integrations</h3>
+            <div class="tag-list">
+              <span class="tag">Bonita BPM</span>
+              <span class="tag">Postman</span>
+              <span class="tag">SAP Business One</span>
+              <span class="tag">Payroll &amp; HRIS Solutions</span>
+              <span class="tag">Jira</span>
+              <span class="tag">Jasper Reports</span>
+            </div>
+          </div> 
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience">
+    <div class="section-head-center">
+      <h2>Professional Experience</h2>
+      <p>Practical experience across software development, HRIS &amp; payroll implementation, systems administration, and IT support.</p>
+    </div>
+
+    <div class="exp-stack">
+      <!-- Role 1 -->
+      <div class="exp-box">
+        <div class="exp-top-row">
+          <h3 class="exp-role">Software Developer (Attaché → Intern → Full-time)</h3>
+          <span class="exp-date-text">Jan 2023 – Aug 2025</span>
+        </div>
+        <div class="exp-company-line">Sofclans Technologies Limited <span>|</span> Nairobi, Kenya</div>
+        <p class="exp-summary">
+          Designed and implemented enterprise Payroll and HR Information Systems (HRIS) improving operational efficiency and statutory compliance for diverse organizations. Automated leave management, multi-level payroll approvals, and reporting workflows while integrating payroll outputs directly with SAP Business One.
+        </p>
+        <div class="exp-achievements-title">Key Achievements</div>
+        <ul class="exp-achievements-list">
+          <li>Reduced payroll processing time by approximately <strong>30%</strong> through end-to-end workflow automation.</li>
+          <li>Delivered HRIS solutions adopted by <strong>3+ client organizations</strong>, ensuring smooth system roll-out and zero manual errors.</li>
+          <li>Trained and provided technical support to <strong>50+ end-users</strong> across HR and Finance departments.</li>
+          <li>Maintained <strong>100% statutory compliance</strong> with PAYE, NHIF, and NSSF regulations and accurate SAP financial journal entries.</li>
+        </ul>
+        <div class="metric-pills-row">
+          <span class="metric-pill">50+ Users Supported</span>
+          <span class="metric-pill">30% Faster Payroll</span>
+          <span class="metric-pill">3+ Client Organizations</span>
+          <span class="metric-pill">100% Statutory Compliance</span>
+        </div>
+        <div class="skill-pills-row">
+          <span class="skill-pill">PHP (CodeIgniter &amp; Laravel)</span>
+          <span class="skill-pill">React</span>
+          <span class="skill-pill">SQL</span>
+          <span class="skill-pill">REST APIs</span>
+          <span class="skill-pill">SAP Business One</span>
+          <span class="skill-pill">Jasper Reports</span>
+        </div>
+      </div>
+
+      <!-- Role 2 -->
+      <div class="exp-box">
+        <div class="exp-top-row">
+          <h3 class="exp-role">Web Developer / Website Administrator</h3>
+          <span class="exp-date-text">Nov 2020 – Present</span>
+        </div>
+        <div class="exp-company-line">Utumishi Investment Limited <span>|</span> Nairobi, Kenya</div>
+        <p class="exp-summary">
+          Designed, developed, and maintained corporate web platforms to strengthen online presence and client engagement. Managed ongoing content updates, server performance optimization, and routine website security audits.
+        </p>
+        <div class="exp-achievements-title">Key Achievements</div>
+        <ul class="exp-achievements-list">
+          <li>Designed and launched responsive corporate web interfaces tailored to business goals.</li>
+          <li>Maintained continuous site uptime and security through proactive vulnerability checks and performance tuning.</li>
+        </ul>
+        <div class="metric-pills-row">
+          <span class="metric-pill">4+ Years Tenure</span>
+          <span class="metric-pill">Proactive Security Audits</span>
+        </div>
+        <div class="skill-pills-row">
+          <span class="skill-pill">Web Design</span>
+          <span class="skill-pill">HTML5 &amp; CSS3</span>
+          <span class="skill-pill">JavaScript</span>
+          <span class="skill-pill">PHP</span>
+          <span class="skill-pill">Website Security</span>
+        </div>
+      </div>
+
+      <!-- Role 3 -->
+      <div class="exp-box">
+        <div class="exp-top-row">
+          <h3 class="exp-role">System Administrator</h3>
+          <span class="exp-date-text">Mar 2020 – Oct 2022</span>
+        </div>
+        <div class="exp-company-line">Level Up Tech Store <span>|</span> Nairobi, Kenya</div>
+        <p class="exp-summary">
+          Oversaw company website administration, digital inventory management systems, and daily IT operations. Provided hands-on technical troubleshooting and user support to keep retail and backend systems running smoothly.
+        </p>
+        <div class="exp-achievements-title">Key Achievements</div>
+        <ul class="exp-achievements-list">
+          <li>Streamlined stock tracking and product updates across web and inventory management platforms.</li>
+          <li>Ensured reliable daily IT operations and fast issue resolution for staff and customers.</li>
+        </ul>
+        <div class="metric-pills-row">
+          <span class="metric-pill">Inventory Systems Managed</span>
+          <span class="metric-pill">Daily IT Support</span>
+        </div>
+        <div class="skill-pills-row">
+          <span class="skill-pill">System Administration</span>
+          <span class="skill-pill">Inventory Management</span>
+          <span class="skill-pill">Web Administration</span>
+          <span class="skill-pill">Technical Support</span>
+        </div>
+      </div>
+
+      <!-- Role 4 -->
+      <div class="exp-box">
+        <div class="exp-top-row">
+          <h3 class="exp-role">Freelance Web Developer &amp; IT Support Intern</h3>
+          <span class="exp-date-text">2018 – Present</span>
+        </div>
+        <div class="exp-company-line">Freelance &amp; Africa Nazarene University (Town Campus) <span>|</span> Nairobi, Kenya</div>
+        <p class="exp-summary">
+          Developed custom websites for SMEs and corporate clients while collaborating on front-end web projects. Previously supported university network administration, OS/software installations, and computer lab maintenance as an IT Support Student Intern.
+        </p>
+        <div class="exp-achievements-title">Key Achievements</div>
+        <ul class="exp-achievements-list">
+          <li>Delivered responsive websites for multiple SMEs and corporate clients.</li>
+          <li>Supported campus network reliability, hardware setup, and daily computer lab operations.</li>
+        </ul>
+        <div class="metric-pills-row">
+          <span class="metric-pill">SME &amp; Corporate Clients</span>
+          <span class="metric-pill">Lab &amp; Network Support</span>
+        </div>
+        <div class="skill-pills-row">
+          <span class="skill-pill">Front-End Development</span>
+          <span class="skill-pill">PHP &amp; MySQL</span>
+          <span class="skill-pill">Network Administration</span>
+          <span class="skill-pill">Hardware &amp; OS Setup</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- projects Section -->
+<section id="projects">
   <div class="section-head-center">
-    <h2>Professional Experience</h2>
-    <p>Practical experience across software development, HRIS &amp; payroll implementation, systems administration, and IT support.</p>
+    <h2>Featured Solutions</h2>
+    <p>A collection of enterprise and web solutions demonstrating my ability to automate payroll, integrate ERP systems, and build reliable web applications.</p>
   </div>
 
-  <div class="exp-stack">
-    <!-- Role 1 -->
-    <div class="exp-box">
-      <div class="exp-top-row">
-        <h3 class="exp-role">Software Developer (Attaché → Intern → Full-time)</h3>
-        <span class="exp-date-text">Jan 2023 – Aug 2025</span>
+  <div class="project-filters">
+    <button type="button" class="filter-pill active" onclick="filterProjects('all', this)">All</button>
+    <button type="button" class="filter-pill" onclick="filterProjects('hris', this)">Payroll &amp; HRIS</button>
+    <button type="button" class="filter-pill" onclick="filterProjects('erp', this)">SAP &amp; APIs</button>
+    <button type="button" class="filter-pill" onclick="filterProjects('web', this)">Web Development</button>
+    <button type="button" class="filter-pill" onclick="filterProjects('sql', this)">SQL &amp; Reporting</button>
+  </div>
+
+  <div class="solutions-grid">
+
+    <!-- Card 1 -->
+    <div class="solution-card" data-tags="hris sql">
+      <div class="solution-banner">
+        <strong>PAYROLL &amp; HRIS SUITE</strong>
+        <span>50+ Active Users • 30% Faster Processing</span>
       </div>
-      <div class="exp-company-line">Sofclans Technologies Limited <span>|</span> Nairobi, Kenya</div>
-      <p class="exp-summary">
-        Designed and implemented enterprise Payroll and HR Information Systems (HRIS) improving operational efficiency and statutory compliance for diverse organizations. Automated leave management, multi-level payroll approvals, and reporting workflows while integrating payroll outputs directly with SAP Business One.
-      </p>
-      <div class="exp-achievements-title">Key Achievements</div>
-      <ul class="exp-achievements-list">
-        <li>Reduced payroll processing time by approximately <strong>30%</strong> through end-to-end workflow automation.</li>
-        <li>Delivered HRIS solutions adopted by <strong>3+ client organizations</strong>, ensuring smooth system roll-out and zero manual errors.</li>
-        <li>Trained and provided technical support to <strong>50+ end-users</strong> across HR and Finance departments.</li>
-        <li>Maintained <strong>100% statutory compliance</strong> with PAYE, NHIF, and NSSF regulations and accurate SAP financial journal entries.</li>
-      </ul>
-      <div class="metric-pills-row">
-        <span class="metric-pill">50+ Users Supported</span>
-        <span class="metric-pill">30% Faster Payroll</span>
-        <span class="metric-pill">3+ Client Organizations</span>
-        <span class="metric-pill">100% Statutory Compliance</span>
-      </div>
-      <div class="skill-pills-row">
-        <span class="skill-pill">PHP (CodeIgniter &amp; Laravel)</span>
-        <span class="skill-pill">React</span>
-        <span class="skill-pill">SQL</span>
-        <span class="skill-pill">REST APIs</span>
-        <span class="skill-pill">SAP Business One</span>
-        <span class="skill-pill">Jasper Reports</span>
+
+      <div class="solution-body">
+        <h3 class="solution-title">Automated Payroll &amp; HRIS Platform</h3>
+        <div class="tech-tags">
+          <span class="t-badge t-blue">PHP</span>
+          <span class="t-badge t-sky">CodeIgniter</span>
+          <span class="t-badge t-teal">React</span>
+          <span class="t-badge t-slate">SQL</span>
+        </div>
+
+        <div class="sol-section">
+          <h4>Business Problem</h4>
+          <p>Organizations relied on manual spreadsheets for leave tracking, approval routing, and statutory deductions, causing delays and compliance risks.</p>
+        </div>
+
+        <div class="sol-section">
+          <h4>Solution</h4>
+          <p>Designed and implemented an end-to-end Payroll and HRIS web suite automating employee records, multi-tier leave approvals, and PAYE, NHIF, and NSSF calculations.</p>
+        </div>
+
+        <div class="sol-section">
+          <h4>Key Features</h4>
+          <ul>
+            <li>Automated PAYE, NHIF &amp; NSSF tax engine</li>
+            <li>Multi-level leave &amp; payroll approval workflows</li>
+            <li>Custom Jasper payroll &amp; audit reports</li>
+            <li>Role-based HR and Finance dashboards</li>
+          </ul>
+        </div>
+
+        <div class="sol-section">
+          <h4>Key Insights &amp; Outcomes</h4>
+          <ul>
+            <li>Reduced monthly payroll processing time by <strong>30%</strong>.</li>
+            <li>Adopted across <strong>3+ client organizations</strong> supporting 50+ users.</li>
+            <li>Eliminated manual statutory calculation errors.</li>
+          </ul>
+        </div>
+
+        <button type="button" class="details-accordion" onclick="toggleMoreDetails(this)">
+          <span>More Details</span>
+          <span>&#9662;</span>
+        </button>
+        <div class="accordion-panel">
+          <h5>My Role</h5>
+          <p>Full-stack feature development, SQL database modeling, statutory tax logic, Jasper report design, and end-user training.</p>
+          <h5>Technologies Used</h5>
+          <ul>
+            <li>PHP (CodeIgniter &amp; Laravel)</li>
+            <li>React.js &amp; JavaScript (ES6)</li>
+            <li>MySQL &amp; Microsoft SQL</li>
+            <li>Jasper Reports</li>
+          </ul>
+        </div>
+
+        <!-- <a href="https://github.com" target="_blank" class="btn-github">
+          <i class="fa-brands fa-github"></i> View in GitHub
+        </a> -->
       </div>
     </div>
 
-    <!-- Role 2 -->
-    <div class="exp-box">
-      <div class="exp-top-row">
-        <h3 class="exp-role">Web Developer / Website Administrator</h3>
-        <span class="exp-date-text">Nov 2020 – Present</span>
+    <!-- Card 2 -->
+    <div class="solution-card" data-tags="erp sql">
+      <div class="solution-banner" style="background: linear-gradient(135deg, #0f172a, #1d4ed8);">
+        <strong>SAP BUSINESS ONE INTEGRATION</strong>
+        <span>REST API Sync • Automated ERP Journal Entries</span>
       </div>
-      <div class="exp-company-line">Utumishi Investment Limited <span>|</span> Nairobi, Kenya</div>
-      <p class="exp-summary">
-        Designed, developed, and maintained corporate web platforms to strengthen online presence and client engagement. Managed ongoing content updates, server performance optimization, and routine website security audits.
-      </p>
-      <div class="exp-achievements-title">Key Achievements</div>
-      <ul class="exp-achievements-list">
-        <li>Designed and launched responsive corporate web interfaces tailored to business goals.</li>
-        <li>Maintained continuous site uptime and security through proactive vulnerability checks and performance tuning.</li>
-      </ul>
-      <div class="metric-pills-row">
-        <span class="metric-pill">4+ Years Tenure</span>
-        <span class="metric-pill">Proactive Security Audits</span>
-      </div>
-      <div class="skill-pills-row">
-        <span class="skill-pill">Web Design</span>
-        <span class="skill-pill">HTML5 &amp; CSS3</span>
-        <span class="skill-pill">JavaScript</span>
-        <span class="skill-pill">PHP</span>
-        <span class="skill-pill">Website Security</span>
+
+      <div class="solution-body">
+        <h3 class="solution-title">SAP Business One Payroll Integration</h3>
+        <div class="tech-tags">
+          <span class="t-badge t-blue">REST APIs</span>
+          <span class="t-badge t-amber">SAP Business One</span>
+          <span class="t-badge t-slate">SQL</span>
+          <span class="t-badge t-sky">Laravel</span>
+        </div>
+
+        <div class="sol-section">
+          <h4>Business Problem</h4>
+          <p>Finance teams had to manually re-key finalized payroll summaries into SAP Business One every pay cycle, slowing down month-end reconciliation.</p>
+        </div>
+
+        <div class="sol-section">
+          <h4>Solution</h4>
+          <p>Built an automated REST API integration pipeline connecting the HRIS payroll engine directly with SAP Business One to post balanced financial journal entries.</p>
+        </div>
+
+        <div class="sol-section">
+          <h4>Key Features</h4>
+          <ul>
+            <li>Automated general ledger journal entry posting</li>
+            <li>Departmental cost-center mapping</li>
+            <li>Payload validation and error logging</li>
+            <li>Real-time sync status notifications</li>
+          </ul>
+        </div>
+
+        <div class="sol-section">
+          <h4>Key Insights &amp; Outcomes</h4>
+          <ul>
+            <li>Eliminated duplicate manual data entry for Finance staff.</li>
+            <li>Accelerated month-end accounting reconciliation.</li>
+            <li>Maintained 100% audit trail consistency between HR and ERP.</li>
+          </ul>
+        </div>
+
+        <button type="button" class="details-accordion" onclick="toggleMoreDetails(this)">
+          <span>More Details</span>
+          <span>&#9662;</span>
+        </button>
+        <div class="accordion-panel">
+          <h5>My Role</h5>
+          <p>API endpoint architecture, SAP Business One Service Layer integration, SQL data mapping, and UAT testing with Finance teams.</p>
+          <h5>Technologies Used</h5>
+          <ul>
+            <li>PHP (Laravel) &amp; RESTful JSON APIs</li>
+            <li>SAP Business One Service Layer</li>
+            <li>Microsoft SQL &amp; PostgreSQL</li>
+          </ul>
+        </div>
+
+       <!--  <a href="https://github.com" target="_blank" class="btn-github">
+          <i class="fa-brands fa-github"></i> View in GitHub
+        </a> -->
       </div>
     </div>
 
-    <!-- Role 3 -->
-    <div class="exp-box">
-      <div class="exp-top-row">
-        <h3 class="exp-role">System Administrator</h3>
-        <span class="exp-date-text">Mar 2020 – Oct 2022</span>
+    <!-- Card 3 -->
+    <div class="solution-card" data-tags="web sql">
+      <div class="solution-banner" style="background: linear-gradient(135deg, #1d4ed8, #0284c7);">
+        <strong>CORPORATE &amp; INVENTORY PORTALS</strong>
+        <span>Responsive Web • Stock Control • Security</span>
       </div>
-      <div class="exp-company-line">Level Up Tech Store <span>|</span> Nairobi, Kenya</div>
-      <p class="exp-summary">
-        Oversaw company website administration, digital inventory management systems, and daily IT operations. Provided hands-on technical troubleshooting and user support to keep retail and backend systems running smoothly.
-      </p>
-      <div class="exp-achievements-title">Key Achievements</div>
-      <ul class="exp-achievements-list">
-        <li>Streamlined stock tracking and product updates across web and inventory management platforms.</li>
-        <li>Ensured reliable daily IT operations and fast issue resolution for staff and customers.</li>
-      </ul>
-      <div class="metric-pills-row">
-        <span class="metric-pill">Inventory Systems Managed</span>
-        <span class="metric-pill">Daily IT Support</span>
-      </div>
-      <div class="skill-pills-row">
-        <span class="skill-pill">System Administration</span>
-        <span class="skill-pill">Inventory Management</span>
-        <span class="skill-pill">Web Administration</span>
-        <span class="skill-pill">Technical Support</span>
+
+      <div class="solution-body">
+        <h3 class="solution-title">Corporate &amp; Inventory Web Platforms</h3>
+        <div class="tech-tags">
+          <span class="t-badge t-amber">PHP</span>
+          <span class="t-badge t-blue">MySQL</span>
+          <span class="t-badge t-teal">JavaScript</span>
+          <span class="t-badge t-slate">HTML/CSS</span>
+        </div>
+
+        <div class="sol-section">
+          <h4>Business Problem</h4>
+          <p>Corporate clients and retail stores needed secure, modern websites and centralized stock tracking tools to manage products and engage customers online.</p>
+        </div>
+
+        <div class="sol-section">
+          <h4>Solution</h4>
+          <p>Designed, deployed, and administered responsive corporate websites and web-based inventory portals for Utumishi Investment Limited, Level Up Tech Store, and SMEs.</p>
+        </div>
+
+        <div class="sol-section">
+          <h4>Key Features</h4>
+          <ul>
+            <li>Mobile-first responsive UI and service catalogs</li>
+            <li>Admin dashboard for stock and content updates</li>
+            <li>Product search and category filtering</li>
+            <li>Routine security hardening and uptime monitoring</li>
+          </ul>
+        </div>
+
+        <div class="sol-section">
+          <h4>Key Insights &amp; Outcomes</h4>
+          <ul>
+            <li>Digitized product showcases and stock tracking workflows.</li>
+            <li>Maintained high availability and strong site performance.</li>
+            <li>Delivered tailored web solutions for multiple SMEs.</li>
+          </ul>
+        </div>
+
+        <button type="button" class="details-accordion" onclick="toggleMoreDetails(this)">
+          <span>More Details</span>
+          <span>&#9662;</span>
+        </button>
+        <div class="accordion-panel">
+          <h5>My Role</h5>
+          <p>End-to-end UI/UX design, front-end and back-end coding, database setup, hosting deployment, and ongoing website administration.</p>
+          <h5>Technologies Used</h5>
+          <ul>
+            <li>HTML5, CSS3, JavaScript (ES6)</li>
+            <li>PHP &amp; MySQL</li>
+            <li>Git &amp; GitHub</li>
+          </ul>
+        </div>
+
+       <!--  <a href="https://github.com" target="_blank" class="btn-github">
+          <i class="fa-brands fa-github"></i> View in GitHub
+        </a> -->
       </div>
     </div>
 
-    <!-- Role 4 -->
-    <div class="exp-box">
-      <div class="exp-top-row">
-        <h3 class="exp-role">Freelance Web Developer &amp; IT Support Intern</h3>
-        <span class="exp-date-text">2018 – Present</span>
-      </div>
-      <div class="exp-company-line">Freelance &amp; Africa Nazarene University (Town Campus) <span>|</span> Nairobi, Kenya</div>
-      <p class="exp-summary">
-        Developed custom websites for SMEs and corporate clients while collaborating on front-end web projects. Previously supported university network administration, OS/software installations, and computer lab maintenance as an IT Support Student Intern.
-      </p>
-      <div class="exp-achievements-title">Key Achievements</div>
-      <ul class="exp-achievements-list">
-        <li>Delivered responsive websites for multiple SMEs and corporate clients.</li>
-        <li>Supported campus network reliability, hardware setup, and daily computer lab operations.</li>
-      </ul>
-      <div class="metric-pills-row">
-        <span class="metric-pill">SME &amp; Corporate Clients</span>
-        <span class="metric-pill">Lab &amp; Network Support</span>
-      </div>
-      <div class="skill-pills-row">
-        <span class="skill-pill">Front-End Development</span>
-        <span class="skill-pill">PHP &amp; MySQL</span>
-        <span class="skill-pill">Network Administration</span>
-        <span class="skill-pill">Hardware &amp; OS Setup</span>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -1098,6 +1531,7 @@ body.dark-mode .contact-form textarea {
     </div>
   </div>
 </section> -->
+<!-- certification Section -->
 <section id="certifications">
   <div class="section-head-center">
     <h2>Certifications &amp; Trainings</h2>
@@ -1214,6 +1648,158 @@ body.dark-mode .contact-form textarea {
   </div>
 </div>
 
+<!-- contact Section -->
+<section id="contact">
+  <div class="section-head-center">
+    <h2>Let's Connect</h2>
+    <p>Interested in working together or have an opportunity? Feel free to send me a message.</p>
+  </div>
+
+  <div class="contact-grid">
+    <!-- Left Card: Contact Information -->
+    <div class="contact-card">
+      <h3>Contact Information</h3>
+
+      <div class="contact-item">
+        <i class="fa-solid fa-location-dot"></i>
+        <div>
+          <div class="contact-item-label">Location</div>
+          <div class="contact-item-value">Nairobi, Kenya</div>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <i class="fa-solid fa-envelope"></i>
+        <div>
+          <div class="contact-item-label">Email</div>
+          <a href="mailto:sylviayvonne65@gmail.com" class="contact-item-value">sylviayvonne65@gmail.com</a>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <i class="fa-solid fa-phone"></i>
+        <div>
+          <div class="contact-item-label">Phone</div>
+          <a href="tel:+254791001424" class="contact-item-value">+254 791 001 424</a>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <i class="fa-brands fa-github"></i>
+        <div>
+          <div class="contact-item-label">GitHub</div>
+          <a href="https://github.com/sylviayvonne" target="_blank" rel="noopener noreferrer" class="contact-item-value">https://github.com/sylviayvonne</a>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <i class="fa-brands fa-linkedin"></i>
+        <div>
+          <div class="contact-item-label">LinkedIn</div>
+          <a href="https://www.linkedin.com/in/sylvia-yvonne-650ab416a/" target="_blank" rel="noopener noreferrer" class="contact-item-value">https://www.linkedin.com/in/sylvia-yvonne-650ab416a/</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Card: Message Form -->
+    <div class="contact-card">
+      <!-- Uses Formspree so the form actually sends emails on static GitHub Pages -->
+      <form class="contact-form" action="https://formspree.io/f/xoedwrro" method="POST">
+        <input type="text" name="name" placeholder="Full Name" required />
+        <input type="email" name="email" placeholder="Email Address" required />
+        <input type="text" name="subject" placeholder="Subject" required />
+        <textarea name="message" placeholder="Message" required></textarea>
+        <button type="submit" class="contact-submit-btn">
+          <i class="fa-solid fa-paper-plane"></i> Send Message
+        </button>
+      </form>
+    </div>
+  </div>
+</section>     
+
+ <hr />
+<!-- Bottom 4 Highlight Cards -->
+<div class="highlights-grid">
+      <div class="highlight-card">
+        <h2>3+</h2>
+        <p>Years Experience</p>
+      </div>
+      <div class="highlight-card">
+        <h2>10+</h2>
+        <p>Systems &amp; Websites</p>
+      </div>
+      <div class="highlight-card">
+        <h2>12+</h2>
+        <p>Technologies</p>
+      </div>
+      <div class="highlight-card">
+        <h2>7+</h2>
+        <p>Certifications</p>
+      </div>
+</div>
+
+<footer>
+  <div class="footer-container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h3>Sylvia Yvonne</h3>
+        <p>Software / Web Developer &amp; Wordpress Developer</p>
+        
+      </div>
+
+      <ul class="footer-links">
+        <!-- <li><a href="#home">Home</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li> -->
+      </ul>
+
+      <!-- <div class="footer-socials">
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+        <a href="mailto:sylvia.yvonne@example.com" aria-label="Email">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+      </div> -->
+
+      <div class="footer-socials">
+            <a href="https://github.com/sylviayvonne" target="_blank" aria-label="GitHub" title="GitHub">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+              </svg>
+            </a>
+
+            <a href="https://www.linkedin.com/in/sylvia-yvonne-650ab416a/" target="_blank" aria-label="LinkedIn" title="LinkedIn">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+              </svg>
+            </a>
+
+            <a href="mailto:sylviayvonne65@gmail.com" aria-label="Email" title="Email">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+              </svg>
+            </a>
+          </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Sylvia Yvonne. All rights reserved.</p>
+      <a href="#home" class="back-to-top">
+        Back to top <i class="fa-solid fa-arrow-up"></i>
+      </a>
+    </div>
+  </div>
+</footer>
+
+
 <script>
   function openCert(title, fileUrl) {
     document.getElementById('certModalTitle').textContent = title;
@@ -1283,374 +1869,6 @@ body.dark-mode .contact-form textarea {
     }
   });
 </script>
-
-
-
- <!-- Education Section -->
-<section id="education">
-  <div class="section-head-center">
-    <h2>Education &amp; Qualifications</h2>
-    <p>Academic foundation in computer science and information technology.</p>
-  </div>
-
-  <div class="edu-stack">
-    <div class="edu-box">
-      <div class="edu-icon"><i class="fa-solid fa-graduation-cap"></i></div>
-      <div class="edu-content">
-        <div class="edu-top">
-          <h3 class="edu-degree">Bachelor of Computer Science</h3>
-          <span class="edu-period">May 2020 – Aug 2024</span>
-        </div>
-        <div class="edu-school">Africa Nazarene University</div>
-        <p class="edu-note">Focused on software engineering, database management systems, networking, and enterprise application development.</p>
-      </div>
-    </div>
-
-    <div class="edu-box">
-      <div class="edu-icon"><i class="fa-solid fa-laptop-code"></i></div>
-      <div class="edu-content">
-        <div class="edu-top">
-          <h3 class="edu-degree">Diploma in Information Technology</h3>
-          <span class="edu-period">Sep 2017 – Nov 2019</span>
-        </div>
-        <div class="edu-school">Africa Nazarene University</div>
-        <p class="edu-note">Built core technical skills in programming, web technologies, systems administration, and IT infrastructure support.</p>
-      </div>
-    </div>
-
-    <div class="edu-box">
-      <div class="edu-icon"><i class="fa-solid fa-school"></i></div>
-      <div class="edu-content">
-        <div class="edu-top">
-          <h3 class="edu-degree">Kenya Certificate of Secondary Education (KCSE)</h3>
-          <span class="edu-period">2013 – 2016</span>
-        </div>
-        <div class="edu-school">Lema Girls’ Secondary School</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- projects Section -->
-<section id="projects">
-  <div class="section-head-center">
-    <h2>Featured Solutions</h2>
-    <p>A collection of enterprise and web solutions demonstrating my ability to automate payroll, integrate ERP systems, and build reliable web applications.</p>
-  </div>
-
-  <div class="project-filters">
-    <button type="button" class="filter-pill active" onclick="filterProjects('all', this)">All</button>
-    <button type="button" class="filter-pill" onclick="filterProjects('hris', this)">Payroll &amp; HRIS</button>
-    <button type="button" class="filter-pill" onclick="filterProjects('erp', this)">SAP &amp; APIs</button>
-    <button type="button" class="filter-pill" onclick="filterProjects('web', this)">Web Development</button>
-    <button type="button" class="filter-pill" onclick="filterProjects('sql', this)">SQL &amp; Reporting</button>
-  </div>
-
-  <div class="solutions-grid">
-
-    <!-- Card 1 -->
-    <div class="solution-card" data-tags="hris sql">
-      <div class="solution-banner">
-        <strong>PAYROLL &amp; HRIS SUITE</strong>
-        <span>50+ Active Users • 30% Faster Processing</span>
-      </div>
-
-      <div class="solution-body">
-        <h3 class="solution-title">Automated Payroll &amp; HRIS Platform</h3>
-        <div class="tech-tags">
-          <span class="t-badge t-blue">PHP</span>
-          <span class="t-badge t-sky">CodeIgniter</span>
-          <span class="t-badge t-teal">React</span>
-          <span class="t-badge t-slate">SQL</span>
-        </div>
-
-        <div class="sol-section">
-          <h4>Business Problem</h4>
-          <p>Organizations relied on manual spreadsheets for leave tracking, approval routing, and statutory deductions, causing delays and compliance risks.</p>
-        </div>
-
-        <div class="sol-section">
-          <h4>Solution</h4>
-          <p>Designed and implemented an end-to-end Payroll and HRIS web suite automating employee records, multi-tier leave approvals, and PAYE, NHIF, and NSSF calculations.</p>
-        </div>
-
-        <div class="sol-section">
-          <h4>Key Features</h4>
-          <ul>
-            <li>Automated PAYE, NHIF &amp; NSSF tax engine</li>
-            <li>Multi-level leave &amp; payroll approval workflows</li>
-            <li>Custom Jasper payroll &amp; audit reports</li>
-            <li>Role-based HR and Finance dashboards</li>
-          </ul>
-        </div>
-
-        <div class="sol-section">
-          <h4>Key Insights &amp; Outcomes</h4>
-          <ul>
-            <li>Reduced monthly payroll processing time by <strong>30%</strong>.</li>
-            <li>Adopted across <strong>3+ client organizations</strong> supporting 50+ users.</li>
-            <li>Eliminated manual statutory calculation errors.</li>
-          </ul>
-        </div>
-
-        <button type="button" class="details-accordion" onclick="toggleMoreDetails(this)">
-          <span>More Details</span>
-          <span>&#9662;</span>
-        </button>
-        <div class="accordion-panel">
-          <h5>My Role</h5>
-          <p>Full-stack feature development, SQL database modeling, statutory tax logic, Jasper report design, and end-user training.</p>
-          <h5>Technologies Used</h5>
-          <ul>
-            <li>PHP (CodeIgniter &amp; Laravel)</li>
-            <li>React.js &amp; JavaScript (ES6)</li>
-            <li>MySQL &amp; Microsoft SQL</li>
-            <li>Jasper Reports</li>
-          </ul>
-        </div>
-
-        <a href="https://github.com" target="_blank" class="btn-github">
-          <i class="fa-brands fa-github"></i> View in GitHub
-        </a>
-      </div>
-    </div>
-
-    <!-- Card 2 -->
-    <div class="solution-card" data-tags="erp sql">
-      <div class="solution-banner" style="background: linear-gradient(135deg, #0f172a, #1d4ed8);">
-        <strong>SAP BUSINESS ONE INTEGRATION</strong>
-        <span>REST API Sync • Automated ERP Journal Entries</span>
-      </div>
-
-      <div class="solution-body">
-        <h3 class="solution-title">SAP Business One Payroll Integration</h3>
-        <div class="tech-tags">
-          <span class="t-badge t-blue">REST APIs</span>
-          <span class="t-badge t-amber">SAP Business One</span>
-          <span class="t-badge t-slate">SQL</span>
-          <span class="t-badge t-sky">Laravel</span>
-        </div>
-
-        <div class="sol-section">
-          <h4>Business Problem</h4>
-          <p>Finance teams had to manually re-key finalized payroll summaries into SAP Business One every pay cycle, slowing down month-end reconciliation.</p>
-        </div>
-
-        <div class="sol-section">
-          <h4>Solution</h4>
-          <p>Built an automated REST API integration pipeline connecting the HRIS payroll engine directly with SAP Business One to post balanced financial journal entries.</p>
-        </div>
-
-        <div class="sol-section">
-          <h4>Key Features</h4>
-          <ul>
-            <li>Automated general ledger journal entry posting</li>
-            <li>Departmental cost-center mapping</li>
-            <li>Payload validation and error logging</li>
-            <li>Real-time sync status notifications</li>
-          </ul>
-        </div>
-
-        <div class="sol-section">
-          <h4>Key Insights &amp; Outcomes</h4>
-          <ul>
-            <li>Eliminated duplicate manual data entry for Finance staff.</li>
-            <li>Accelerated month-end accounting reconciliation.</li>
-            <li>Maintained 100% audit trail consistency between HR and ERP.</li>
-          </ul>
-        </div>
-
-        <button type="button" class="details-accordion" onclick="toggleMoreDetails(this)">
-          <span>More Details</span>
-          <span>&#9662;</span>
-        </button>
-        <div class="accordion-panel">
-          <h5>My Role</h5>
-          <p>API endpoint architecture, SAP Business One Service Layer integration, SQL data mapping, and UAT testing with Finance teams.</p>
-          <h5>Technologies Used</h5>
-          <ul>
-            <li>PHP (Laravel) &amp; RESTful JSON APIs</li>
-            <li>SAP Business One Service Layer</li>
-            <li>Microsoft SQL &amp; PostgreSQL</li>
-          </ul>
-        </div>
-
-        <a href="https://github.com" target="_blank" class="btn-github">
-          <i class="fa-brands fa-github"></i> View in GitHub
-        </a>
-      </div>
-    </div>
-
-    <!-- Card 3 -->
-    <div class="solution-card" data-tags="web sql">
-      <div class="solution-banner" style="background: linear-gradient(135deg, #1d4ed8, #0284c7);">
-        <strong>CORPORATE &amp; INVENTORY PORTALS</strong>
-        <span>Responsive Web • Stock Control • Security</span>
-      </div>
-
-      <div class="solution-body">
-        <h3 class="solution-title">Corporate &amp; Inventory Web Platforms</h3>
-        <div class="tech-tags">
-          <span class="t-badge t-amber">PHP</span>
-          <span class="t-badge t-blue">MySQL</span>
-          <span class="t-badge t-teal">JavaScript</span>
-          <span class="t-badge t-slate">HTML/CSS</span>
-        </div>
-
-        <div class="sol-section">
-          <h4>Business Problem</h4>
-          <p>Corporate clients and retail stores needed secure, modern websites and centralized stock tracking tools to manage products and engage customers online.</p>
-        </div>
-
-        <div class="sol-section">
-          <h4>Solution</h4>
-          <p>Designed, deployed, and administered responsive corporate websites and web-based inventory portals for Utumishi Investment Limited, Level Up Tech Store, and SMEs.</p>
-        </div>
-
-        <div class="sol-section">
-          <h4>Key Features</h4>
-          <ul>
-            <li>Mobile-first responsive UI and service catalogs</li>
-            <li>Admin dashboard for stock and content updates</li>
-            <li>Product search and category filtering</li>
-            <li>Routine security hardening and uptime monitoring</li>
-          </ul>
-        </div>
-
-        <div class="sol-section">
-          <h4>Key Insights &amp; Outcomes</h4>
-          <ul>
-            <li>Digitized product showcases and stock tracking workflows.</li>
-            <li>Maintained high availability and strong site performance.</li>
-            <li>Delivered tailored web solutions for multiple SMEs.</li>
-          </ul>
-        </div>
-
-        <button type="button" class="details-accordion" onclick="toggleMoreDetails(this)">
-          <span>More Details</span>
-          <span>&#9662;</span>
-        </button>
-        <div class="accordion-panel">
-          <h5>My Role</h5>
-          <p>End-to-end UI/UX design, front-end and back-end coding, database setup, hosting deployment, and ongoing website administration.</p>
-          <h5>Technologies Used</h5>
-          <ul>
-            <li>HTML5, CSS3, JavaScript (ES6)</li>
-            <li>PHP &amp; MySQL</li>
-            <li>Git &amp; GitHub</li>
-          </ul>
-        </div>
-
-        <a href="https://github.com" target="_blank" class="btn-github">
-          <i class="fa-brands fa-github"></i> View in GitHub
-        </a>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-    <!-- Skills Section -->
-    <section id="skills">
-      <div class="section-head-center">
-        <h2>Technical Skills &amp; Competencies</h2>
-        <p></p>
-      </div>
-      <div class="cards-grid">
-        <div class="card">
-          <h3>Programming &amp; Frameworks</h3>
-          <div class="tag-list">
-            <span class="tag">PHP (CodeIgniter)</span>
-            <span class="tag">Laravel</span>
-            <span class="tag">React.js</span>
-            <span class="tag">JavaScript (ES6)</span>
-            <span class="tag">HTML5 &amp; CSS3</span>
-          </div>
-        </div>
-        <div class="card">
-          <h3>Databases &amp; Reporting</h3>
-          <div class="tag-list">
-            <span class="tag">MySQL</span>
-            <span class="tag">PostgreSQL</span>
-            <span class="tag">Microsoft SQL</span>
-            <span class="tag">Jasper Reports</span>
-          </div>
-        </div>
-        <div class="card">
-          <h3>Enterprise &amp; Integrations</h3>
-          <div class="tag-list">
-          </div>
-        </div> 
-      </section>
-
-    <!-- contact Section -->
-<section id="contact">
-  <div class="section-head-center">
-    <h2>Let's Connect</h2>
-    <p>Interested in working together or have an opportunity? Feel free to send me a message.</p>
-  </div>
-
-  <div class="contact-grid">
-    <!-- Left Card: Contact Information -->
-    <div class="contact-card">
-      <h3>Contact Information</h3>
-
-      <div class="contact-item">
-        <i class="fa-solid fa-location-dot"></i>
-        <div>
-          <div class="contact-item-label">Location</div>
-          <div class="contact-item-value">Nairobi, Kenya</div>
-        </div>
-      </div>
-
-      <div class="contact-item">
-        <i class="fa-solid fa-envelope"></i>
-        <div>
-          <div class="contact-item-label">Email</div>
-          <a href="mailto:sylviayvonne65@gmail.com" class="contact-item-value">sylviayvonne65@gmail.com</a>
-        </div>
-      </div>
-
-      <div class="contact-item">
-        <i class="fa-solid fa-phone"></i>
-        <div>
-          <div class="contact-item-label">Phone</div>
-          <a href="tel:+254791001424" class="contact-item-value">+254 791 001 424</a>
-        </div>
-      </div>
-
-      <div class="contact-item">
-        <i class="fa-brands fa-github"></i>
-        <div>
-          <div class="contact-item-label">GitHub</div>
-          <a href="https://github.com/sylviayvonne" target="_blank" rel="noopener noreferrer" class="contact-item-value">https://github.com/sylviayvonne</a>
-        </div>
-      </div>
-
-      <div class="contact-item">
-        <i class="fa-brands fa-linkedin"></i>
-        <div>
-          <div class="contact-item-label">LinkedIn</div>
-          <a href="https://www.linkedin.com/in/sylvia-yvonne-650ab416a/" target="_blank" rel="noopener noreferrer" class="contact-item-value">https://www.linkedin.com/in/sylvia-yvonne-650ab416a/</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Right Card: Message Form -->
-    <div class="contact-card">
-      <!-- Uses Formspree so the form actually sends emails on static GitHub Pages -->
-      <form class="contact-form" action="https://formspree.io/f/xoedwrro" method="POST">
-        <input type="text" name="name" placeholder="Full Name" required />
-        <input type="email" name="email" placeholder="Email Address" required />
-        <input type="text" name="subject" placeholder="Subject" required />
-        <textarea name="message" placeholder="Message" required></textarea>
-        <button type="submit" class="contact-submit-btn">
-          <i class="fa-solid fa-paper-plane"></i> Send Message
-        </button>
-      </form>
-    </div>
-  </div>
-</section>     
 
 
 
