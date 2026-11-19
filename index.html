@@ -1591,6 +1591,19 @@ body.dark-mode .footer-bottom {
       </button>
     </div>
 
+     <div class="cert-box">
+      <div>
+        <div class="cert-badge-top">
+          <span class="cert-issuer">CISCO</span>
+          <span class="cert-date">Jun 2022</span>
+        </div>
+        <h3 class="cert-title">Introduction to Cybersecurity</h3>
+      </div>
+      <button type="button" class="cert-link" onclick="openCert('Introduction to Cybersecurity', 'certificates/ciscocybersecurity.pdf')">
+        <i class="fa-regular fa-eye"></i> View Certificate
+      </button>
+    </div>
+
     <div class="cert-box">
       <div>
         <div class="cert-badge-top">
@@ -1801,12 +1814,31 @@ body.dark-mode .footer-bottom {
 
 
 <script>
+  // function openCert(title, fileUrl) {
+  //   document.getElementById('certModalTitle').textContent = title;
+  //   document.getElementById('certFrame').src = fileUrl;
+  //   document.getElementById('certOpenTab').href = fileUrl;
+  //   document.getElementById('certModal').classList.add('open');
+  // }
   function openCert(title, fileUrl) {
-    document.getElementById('certModalTitle').textContent = title;
-    document.getElementById('certFrame').src = fileUrl;
-    document.getElementById('certOpenTab').href = fileUrl;
-    document.getElementById('certModal').classList.add('open');
+  document.getElementById('certModalTitle').textContent = title;
+  document.getElementById('certOpenTab').href = fileUrl;
+
+  // Convert relative path (e.g., 'certificates/cyberpro.pdf') into a full public URL
+  const fullUrl = new URL(fileUrl, window.location.href).href;
+
+  // If live on GitHub Pages (http/https), use Google Docs Viewer so it previews instead of downloading
+  if (window.location.protocol.startsWith('http')) {
+    document.getElementById('certFrame').src = 
+      'https://google.com' + encodeURIComponent(fullUrl);
+  } else {
+    // Fallback if testing locally via file:///
+    document.getElementById('certFrame').src = fileUrl + '#toolbar=0';
   }
+
+  document.getElementById('certModal').classList.add('open');
+}
+
 
   function closeCert() {
     document.getElementById('certModal').classList.remove('open');
